@@ -1,3 +1,6 @@
+HTML
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,51 +10,56 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans antialiased">
-    <div class="min-h-screen flex flex-col md:flex-row">
-        <!-- Menú Lateral -->
-        <aside class="w-full md:w-64 bg-slate-900 text-slate-300 p-6 flex flex-col justify-between">
-            <div>
-                <h2 class="text-white text-xl font-bold mb-6 tracking-wide">Gestión Integral</h2>
-                <nav class="space-y-2">
-                    <a href="#" class="block px-4 py-2 rounded-lg bg-slate-800 text-white font-medium">Panel General</a>
-                    <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Inventario</a>
-                    <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Personal</a>
-                    <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Seguimiento Operativo</a>
-                    <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Analíticas</a>
-                </nav>
+    <div class="min-h-screen flex flex-col lg:flex-row">
+        <!-- Menú de Navegación Adaptable (Móvil y Escritorio) -->
+        <header class="bg-slate-900 text-slate-300 p-4 lg:w-64 lg:min-h-screen flex lg:flex-col justify-between items-center lg:items-stretch shadow-md">
+            <div class="flex items-center justify-between w-full lg:w-auto">
+                <h2 class="text-white text-lg lg:text-xl font-bold tracking-wide">Gestión Integral</h2>
+                <!-- Indicador visual móvil -->
+                <span class="lg:hidden text-xs bg-emerald-500 text-white px-2 py-1 rounded-full">Activo</span>
             </div>
-            <div class="mt-8 pt-4 border-t border-slate-800 text-xs text-slate-500">
-                Estado: Conectado a GitHub Pages
+            <!-- Enlaces de navegación ocultos en móvil pequeño o desplegables si se desea, aquí adaptados en fila o columna -->
+            <nav class="hidden lg:flex flex-col space-y-2 mt-6">
+                <a href="#" class="block px-4 py-2 rounded-lg bg-slate-800 text-white font-medium">Panel General</a>
+                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Inventario</a>
+                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Personal</a>
+                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Seguimiento</a>
+                <a href="#" class="block px-4 py-2 rounded-lg hover:bg-slate-800 hover:text-white transition">Analíticas</a>
+            </nav>
+            <div class="hidden lg:block mt-8 pt-4 border-t border-slate-800 text-xs text-slate-500">
+                Optimizado para Móvil y Web
             </div>
-        </aside>
+        </header>
 
-        <!-- Contenido Principal -->
-        <main class="flex-1 p-8">
-            <header class="mb-8">
-                <h1 class="text-3xl font-bold text-slate-900">Panel de Control</h1>
-                <p class="text-slate-600">Bienvenido al sistema centralizado de operaciones.</p>
+        <!-- Contenido Principal Adaptable -->
+        <main class="flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full">
+            <header class="mb-6 sm:mb-8">
+                <h1 class="text-2xl sm:text-3xl font-bold text-slate-900">Panel de Control</h1>
+                <p class="text-sm sm:text-base text-slate-600">Monitoreo centralizado adaptado a dispositivos móviles.</p>
             </header>
 
-            <!-- Cuadrícula de Indicadores -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <p class="text-sm font-medium text-slate-500">Artículos en Inventario</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mt-1">0</h3>
+            <!-- Cuadrícula de Indicadores (1 columna en teléfono, 3 en tablets/PCs) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200">
+                    <p class="text-xs sm:text-sm font-medium text-slate-500">Artículos en Inventario</p>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">0</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <p class="text-sm font-medium text-slate-500">Personal Registrado</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mt-1">0</h3>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200">
+                    <p class="text-xs sm:text-sm font-medium text-slate-500">Personal Registrado</p>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">0</h3>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                    <p class="text-sm font-medium text-slate-500">Operaciones Activas</p>
-                    <h3 class="text-2xl font-bold text-slate-900 mt-1">0</h3>
+                <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200 sm:col-span-2 lg:col-span-1">
+                    <p class="text-xs sm:text-sm font-medium text-slate-500">Operaciones Activas</p>
+                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">0</h3>
                 </div>
             </div>
 
-            <!-- Área de Trabajo -->
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 class="text-lg font-bold text-slate-900 mb-4">Módulos del Sistema</h3>
-                <p class="text-sm text-slate-600">La interfaz visual está lista. El siguiente paso consiste en integrar la base de datos para habilitar el registro en vivo de inventario y personal.</p>
+            <!-- Área de Trabajo Adaptable -->
+            <div class="bg-white p-5 sm:p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 mb-3">Módulos del Sistema</h3>
+                <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    La interfaz ajusta automáticamente sus dimensiones, márgenes y tamaños de fuente según la pantalla del teléfono o computadora desde donde se consulte.
+                </p>
             </div>
         </main>
     </div>
